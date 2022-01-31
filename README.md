@@ -14,7 +14,7 @@ scoop install curl sudo jq
 ```
 ### Neovim
 ```powershell
-scoop install neovim gccc
+scoop install neovim gcc
 ```
 ## Installation
 * clone this repo to the `.config` folder
