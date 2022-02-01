@@ -103,7 +103,7 @@
         {
           "type": "text",
           "style": "plain",
-          "foreground": "#21c7c7",
+          "foreground": "#0077c2",
           "properties": {
             "prefix": "",
             "postfix": "",
