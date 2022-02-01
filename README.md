@@ -1,21 +1,29 @@
 # My Powershell Config
 ## Requirement 
+
 ### Scope
 ```powershell
 iwr -useb get.scoop.sh | iex
 ```
+
 ### Git
 ```powershell
 winget install -e --id Git.Git
 ```
+
 ### Curl Sudo jq
 ```powershell
 scoop install curl sudo jq
 ```
+
 ### Neovim
 ```powershell
 scoop install neovim gcc
 ```
+
+### Font Hack NF
+Change Windows Terminal font to Hack NF. Download font Hack NF from [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts "Nerd Fonts").
+
 ## Installation
 * clone this repo to the `.config` folder
 ```powershell
