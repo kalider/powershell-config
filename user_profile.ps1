@@ -4,7 +4,7 @@ Import-Module oh-my-posh
 Set-PoshPrompt Paradox
 
 # Load prompt config
-$PROMPT_CONFIG = "$env:POSH_THEMES_PATH/wopian.omp.json"
+$PROMPT_CONFIG = "$env:USERPROFILE\.config\powershell\tah.omp.json"
 oh-my-posh --init --shell pwsh --config "$PROMPT_CONFIG" | Invoke-Expression
 
 # Terminal Icons
@@ -14,6 +14,7 @@ Import-Module Terminal-Icons
 Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 Set-PSReadlineKeyHandler -Chord 'Ctrl+k' -Function PreviousSuggestion
 Set-PSReadlineKeyHandler -Chord 'Ctrl+j' -Function NextSuggestion
