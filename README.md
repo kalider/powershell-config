@@ -21,6 +21,26 @@ scoop install curl sudo jq
 scoop install neovim gcc
 ```
 
+### Terminal Icons
+```powersheel
+Install-Module -Name Terminal-Icons -Repository PSGallery -Force
+```
+
+### z -> Directory Jumper
+```powershell
+Install-Module -Name z -Force
+```
+
+### PSReadLine
+```powershell
+Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
+```
+
+### PSFzf 
+```powershell
+scoop install fzf
+Install-Module -Name PSFzf -Scope CurrentUser -Force
+```
 ### Font Hack NF
 Change Windows Terminal font to Hack NF. Download font Hack NF from [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts "Nerd Fonts").
 
@@ -29,11 +49,13 @@ Change Windows Terminal font to Hack NF. Download font Hack NF from [Nerd Fonts]
 ```powershell
 git clone https://github.com/kalider/powershell-config.git powershell
 ```
+
 * Install module `posh-git` and `oh-my-posh`
 ```powershell
 Install-Module posh-git -Scope CurrentUser -Force
 Install-Module oh-my-posh -Scope CurrentUser -Force
 ```
+
 * Include powershell config to the main config
 
     run this command:
