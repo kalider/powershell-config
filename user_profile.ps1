@@ -1,7 +1,5 @@
 # Prompt
 Import-Module posh-git
-Import-Module oh-my-posh
-Set-PoshPrompt Paradox
 
 # Load prompt config
 $PROMPT_CONFIG = "$env:USERPROFILE\.config\powershell\tah.omp.json"
@@ -16,8 +14,8 @@ Set-PSReadLineOption -BellStyle None
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
-Set-PSReadlineKeyHandler -Chord 'Ctrl+k' -Function PreviousSuggestion
-Set-PSReadlineKeyHandler -Chord 'Ctrl+j' -Function NextSuggestion
+Set-PSReadlineKeyHandler -Chord 'Alt+k' -Function PreviousSuggestion
+Set-PSReadlineKeyHandler -Chord 'Alt+j' -Function NextSuggestion
 
 # Fzf
 Import-Module PSFzf

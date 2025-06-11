@@ -1,5 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
   "blocks": [
     {
       "type": "prompt",
@@ -9,15 +10,13 @@
           "type": "shell",
           "style": "plain",
           "foreground": "#21c7c7",
-          "properties": {
-            "prefix": "",
-            "postfix": ""
-          }
+          "template": "{{ .Name }}"
         },
         {
           "type": "path",
           "style": "plain",
           "foreground": "cyan",
+          "template": " {{ .Path }} ",
           "properties": {
             "style": "full"
           }
@@ -26,11 +25,7 @@
           "type": "git",
           "style": "plain",
           "foreground": "lightYellow",
-          "properties": {
-            "prefix": ":: <lightBlue>git(</>",
-            "postfix": "<lightBlue>)</>",
-            "template": "{{ .HEAD }}"
-          }
+          "template": ":: <lightBlue>git(</>{{ .HEAD }}<lightBlue>)</>"
         }
       ]
     },
@@ -42,44 +37,43 @@
           "type": "node",
           "style": "plain",
           "foreground": "#68a063",
+          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
           "properties": {
-            "display_version": true,
-            "postfix": "",
             "display_mode": "files",
-            "display_package_manager": true,
-            "yarn_icon": "/yarn",
-            "npm_icon": "/npm"
+            "fetch_package_manager": true,
+            "fetch_version": true,
+            "npm_icon": "/npm",
+            "yarn_icon": "/yarn"
           }
         },
         {
           "type": "crystal",
           "style": "plain",
           "foreground": "#4063D8",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
           "properties": {
-            "display_version": true,
             "display_mode": "files",
-            "postfix": ""
+            "fetch_version": true
           }
         },
         {
           "type": "ruby",
           "style": "plain",
           "foreground": "#DE3F24",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
           "properties": {
-            "display_version": true,
-            "postfix": "",
-            "display_mode": "files"
+            "display_mode": "files",
+            "fetch_version": true
           }
         },
         {
           "type": "python",
           "style": "plain",
           "foreground": "#FED142",
+          "template": " {{ .Full }}",
           "properties": {
-            "fetch_virtual_env": false,
-            "postfix": "",
             "display_mode": "context",
-            "template": "{{ .Full }}"
+            "fetch_virtual_env": false
           }
         },
         {
@@ -92,38 +86,39 @@
             "{{if eq \"Discharging\" .State.String}}#fff34e{{end}}",
             "{{if eq \"Full\" .State.String}}#33DD2D{{end}}"
           ],
+          "template": " {{ if not .Error }}{{ .Icon }}{{ .Percentage }}{{ end }}{{ .Error }}\uf295 ",
           "properties": {
-            "discharging_icon": " ",
-            "charging_icon": "\uf1e6 ",
             "charged_icon": "\uf58e ",
-            "prefix": " ",
-            "postfix": " "
+            "charging_icon": "\uf1e6 ",
+            "discharging_icon": "\ue234 "
           }
         },
         {
           "type": "time",
           "style": "plain",
-          "foreground": "lightGreen"
+          "foreground": "lightGreen",
+          "template": " {{ .CurrentDate | date .Format }} "
         }
       ]
     },
     {
       "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
           "type": "exit",
           "style": "powerline",
           "foreground": "lightGreen",
-          "foreground_templates": ["{{ if gt .Code 0 }}red{{ end }}"],
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}red{{ end }}"
+          ],
+          "template": "\u279c ",
           "properties": {
-            "always_enabled": true,
-            "template": "\u279c",
-            "prefix": ""
+            "always_enabled": true
           }
         }
-      ]
+      ],
+      "newline": true
     }
   ]
 }
