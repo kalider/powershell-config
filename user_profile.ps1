@@ -15,13 +15,13 @@ Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
-Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
-Set-PSReadlineKeyHandler -Chord 'Ctrl+k' -Function PreviousSuggestion
-Set-PSReadlineKeyHandler -Chord 'Ctrl+j' -Function NextSuggestion
+Set-PSReadLineKeyHandler -Chord 'Alt+d' -Function DeleteChar
+Set-PSReadlineKeyHandler -Chord 'Alt+k' -Function PreviousSuggestion
+Set-PSReadlineKeyHandler -Chord 'Alt+j' -Function NextSuggestion
 
 # Fzf
 Import-Module PSFzf
-Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
+Set-PsFzfOption -PSReadlineChordProvider 'Alt+f' -PSReadlineChordReverseHistory 'Alt+r'
 
 # Alias
 Set-Alias vim nvim
