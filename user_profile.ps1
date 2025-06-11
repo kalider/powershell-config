@@ -1,7 +1,5 @@
 # Prompt
 Import-Module posh-git
-Import-Module oh-my-posh
-Set-PoshPrompt Paradox
 
 # Load prompt config
 $PROMPT_CONFIG = "$env:USERPROFILE\.config\powershell\tah.omp.json"
